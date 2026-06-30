@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interface experimental para conversar com o MIGUEL Platform.">
+  <meta name="theme-color" content="#070b14">
+  <title>Converse com o MIGUEL — Platform</title>
+  <link rel="icon" type="image/png" href="assets/miguel-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-page">
+  <div class="ambient-orb orb-one" aria-hidden="true"></div>
+  <div class="ambient-orb orb-two" aria-hidden="true"></div>
+
+  <header class="site-header chat-app-header">
+    <a class="brand" href="index.html" aria-label="Voltar para o site do MIGUEL">
+      <span class="brand-mark">
+        <img src="assets/miguel-logo.png" alt="">
+      </span>
+      <span>MIGUEL Platform</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegação da conversa">
+      <a href="index.html">Casa do MIGUEL</a>
+      <a href="index.html#platform">Companion × Platform</a>
+    </nav>
+  </header>
+
+  <main class="chat-page-shell">
+    <section class="chat-app" aria-label="Interface experimental de conversa com o MIGUEL">
+      <aside class="chat-app-sidebar">
+        <div class="chat-sidebar-top">
+          <div class="chat-logo large">
+            <img src="assets/miguel-logo.png" alt="">
+          </div>
+          <div>
+            <p class="eyebrow">MIGUEL Platform</p>
+            <h1>Conversas</h1>
+            <p>
+              Organize assuntos em chats separados. Por enquanto, tudo fica
+              salvo apenas neste navegador.
+            </p>
+          </div>
+        </div>
+
+        <div class="conversation-create">
+          <label for="conversationType">Novo chat</label>
+          <div>
+            <select id="conversationType">
+              <option value="casual">Conversa casual</option>
+              <option value="finance">Finanças</option>
+              <option value="project">Projeto</option>
+              <option value="memory">Memória</option>
+            </select>
+            <button id="newConversationButton" type="button">+</button>
+          </div>
+        </div>
+
+        <div id="conversationList" class="conversation-list" aria-label="Conversas locais"></div>
+
+        <div class="chat-boundary-card">
+          <span>Fronteira ativa</span>
+          <p>
+            A versão Platform deve conversar sem tocar na memória íntima do
+            Companion de Lucas. Esta prévia usa armazenamento local.
+          </p>
+        </div>
+      </aside>
+
+      <div class="chat-window chat-app-window">
+        <header class="chat-window-header">
+          <div>
+            <span class="chat-status-dot"></span>
+            <strong id="activeConversationTitle">MIGUEL</strong>
+            <small id="activeConversationMeta">modo prévia local</small>
+          </div>
+          <span id="activeConversationType" class="chat-mode-pill">Memória isolada</span>
+        </header>
+
+        <div id="miguelPlatformMessages" class="chat-messages-preview chat-app-messages" aria-live="polite">
+        </div>
+
+        <form id="miguelPlatformChatForm" class="chat-composer-preview chat-app-composer" aria-label="Campo de mensagem em modo prévia">
+          <textarea id="miguelPlatformInput" rows="1" maxlength="1200" placeholder="Fale com o MIGUEL em modo prévia..."></textarea>
+          <button id="miguelPlatformSend" type="submit">Enviar</button>
+        </form>
+        <p class="chat-preview-note">
+          Modo prévia: as respostas ainda são locais e simuladas. A conexão com o MIGUEL Core virá depois.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
